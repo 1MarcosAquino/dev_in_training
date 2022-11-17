@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>background gradient</title>
+    <style>
+      body {
+        background: #001eff;
+        background: linear-gradient(90deg, #001eff, 50%, #000000 50%);
+        background: -moz-linear-gradient(90deg, #001eff 50%, #000000 50%);
+        background: -webkit-linear-gradient(180deg, #000000 50%, #001eff 50%);
+      }
+      body {
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>background gradient</h2>
+
+    <textarea cols="90" rows="10"></textarea>
+    <br />
+    <br />
+    <input class="cor1" type="color" />
+    <input class="cor2" type="color" />
+    <br />
+    <label>Valor deg</label>
+    <input class="deg" type="range" min="0" max="180" />
+    <br />
+    <label>Valor 1</label>
+    <input class="valor1" type="range" min="0" max="100" />
+    <br />
+    <label>Valor 2</label>
+    <input class="valor2" type="range" min="50" max="100" />
+    <h2>Contador de caracteres</h2>
+    <br />
+    <textarea id="contador" cols="30" rows="10"></textarea>
+    <br />
+    <span class="contador"></span>
+
+    <script>
+      let head = document.querySelector("head");
+      let body = document.querySelector("body");
+      let input1 = document.querySelector(".cor1");
+      let input2 = document.querySelector(".cor2");
+      let input3 = document.querySelector(".deg");
+      let input4 = document.querySelector(".valor1");
+      let input5 = document.querySelector(".valor2");
+      let textarea = document.querySelector("textarea");
+      let inputs = document.querySelectorAll("input");
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("input", function () {
+          let a = input1.value;
+          let b = input2.value;
+          let c = input3.value;
+          let d = input4.value;
+          let e = input5.value;
+          head.innerHTML = `<style>body {background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);height: 96vh; background-size: cover;}</style>`;
+          textarea.innerText = `background: ${a};background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);background: -moz-linear-gradient(${c}deg, ${a} ${d}%, ${b} ${e}%);background: -webkit-linear-gradient(${
+            c * 2
+          }deg, ${b} ${d}%, ${a} ${e}%);`;
+        });
+      }
+
+      let contador = document.body.querySelector("#contador");
+      let spanContador = document.body.querySelector(".contador");
+
+      contador.addEventListener("input", function () {
+        spanContador.innerHTML = `Numero de Caracteres ${contador.textLength}`;
+      });
+    </script>
+  </body>
+</html>

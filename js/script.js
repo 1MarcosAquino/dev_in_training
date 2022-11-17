@@ -9,14 +9,16 @@ let textarea = document.querySelector("textarea");
 let inputs = document.querySelectorAll("input");
 for (i = 0; i < inputs.length; i++) {
   let inputAtual = inputs[i];
-
   inputAtual.addEventListener("input", function () {
     let a = input1.value;
     let b = input2.value;
     let c = input3.value;
     let d = input4.value;
     let e = input5.value;
-    head.innerHTML = `<style>.backGround {background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);}
+    //.backGround
+    head.innerHTML = `<style>body {height: 100vh; background: ${a};background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);background: -moz-linear-gradient(${c}deg, ${a} ${d}%, ${b} ${e}%);background: -webkit-linear-gradient(${
+      c * 2
+    }deg, ${b} ${d}%, ${a} ${e}%);}
          * {
          margin: 0%;
          padding: 0%;
@@ -83,6 +85,8 @@ for (i = 0; i < inputs.length; i++) {
      ul li ul li:hover {
          background: #666;
      }</style>`;
-    textarea.innerText = `background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);`;
+    textarea.innerText = `background: ${a};background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);background: -moz-linear-gradient(${c}deg, ${a} ${d}%, ${b} ${e}%);background: -webkit-linear-gradient(${
+      c * 2
+    }deg, ${b} ${d}%, ${a} ${e}%);`;
   });
 }
