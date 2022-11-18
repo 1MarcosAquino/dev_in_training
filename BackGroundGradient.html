@@ -37,11 +37,18 @@
           style="resize: none"
         ></textarea>
         <br />
-        <label for="gradient-type">Radial</label>
-        <input type="radio" name="gradient-type" id="radial" />
+        <label for="gradient-type" style="display: none">Radial</label>
+        <input
+          type="radio"
+          name="gradient-type"
+          id="radial"
+          style="display: none"
+          ;
+        />
 
         <label for="gradient-type">Linear</label>
-        <input type="radio" name="gradient-type" id="linear" />
+        <input type="radio" name="gradient-type" id="linear" checked />
+
         <br />
         <label for="">Cores</label><br />
         <input class="cor1" type="color" />
@@ -97,8 +104,15 @@
           id="espalhar"
         />
         <br />
-        <label for="opacidade">Opacidade está Bugada</label><br />
-        <input min="0" max="100" type="range" name="opacidade" id="opacidade" />
+        <label for="opacidade" style="display: none">Opacidade</label><br />
+        <input
+          min="0"
+          max="100"
+          type="range"
+          name="opacidade"
+          id="opacidade"
+          style="display: none"
+        />
       </div>
 
       <!--- <h2>Contador de caracteres</h2>
@@ -142,22 +156,31 @@
       let textarea = document.querySelector("textarea");
       let inputs = document.querySelectorAll(".gradiente input");
 
+      const linear = document.getElementById("linear");
+      const radial = document.getElementById("radial");
+      let tipo = "";
+
       for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("input", function () {
-          let dom = `linear-gradient(${input3.value}deg, ${input1.value}, ${input4.value}%, ${input2.value} ${input5.value}%)`;
+          if (radial.checked == true) {
+            tipo = "radial";
+          } else {
+            tipo = "linear";
+          }
+          let dom = `${tipo}-gradient(${input3.value}deg, ${input1.value}, ${input4.value}%, ${input2.value} ${input5.value}%)`;
           body.style.background = dom;
 
           textarea.innerText = `background: ${
             input1.value
-          };background: linear-gradient(${input3.value}deg, ${input1.value}, ${
+          };background: ${tipo}-gradient(${input3.value}deg, ${input1.value}, ${
             input4.value
           }%, ${input2.value} ${
             input5.value
-          }%);background: -moz-linear-gradient(${input3.value}deg, ${
+          }%);background: -moz-${tipo}-gradient(${input3.value}deg, ${
             input1.value
           } ${input4.value}%, ${input2.value} ${
             input5.value
-          }%);background: -webkit-linear-gradient(${input3.value * 2}deg, ${
+          }%);background: -webkit-${tipo}-gradient(${input3.value * 2}deg, ${
             input2.value
           } ${input4.value}%, ${input1.value} ${input5.value}%);`;
         });
