@@ -6,9 +6,14 @@
     <style>
       body {
         height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
       }
       .container {
-        box-shadow: 10px 10px 10px 10px red;
+        box-shadow: 75px 75px 75px 75px #00000000;
+
+        /* box-shadow: 10px 10px 10px 10px red; */
       }
     </style>
   </head>
@@ -38,6 +43,7 @@
         <label for="gradient-type">Linear</label>
         <input type="radio" name="gradient-type" id="linear" />
         <br />
+        <label for="">Cores</label><br />
         <input class="cor1" type="color" />
         <input class="cor2" type="color" />
         <br />
@@ -48,7 +54,7 @@
         <input class="valor1" type="range" min="0" max="100" />
         <br />
         <label>Cor 2</label><br />
-        <input class="valor2" type="range" min="50" max="100" />
+        <input class="valor2" type="range" min="0" max="100" />
       </div>
       <div class="bordas" style="margin: 10px auto">
         <h2 style="text-align: center">Box Shandow</h2>
@@ -61,13 +67,38 @@
         <br />
         <input type="color" name="box-color" id="box-color" />
         <br />
-        <input type="range" name="" id="" />
+        <label for="horizontal">Horizontal</label><br />
+        <input
+          min="-100"
+          max="100"
+          type="range"
+          name="horizontal"
+          id="horizontal"
+        />
         <br />
-        <input type="range" name="" id="" />
+        <label for="vertical">Vertical</label><br />
+        <input
+          min="-100"
+          max="100"
+          type="range"
+          name="vertical"
+          id="vertical"
+        />
         <br />
-        <input type="range" name="" id="" />
+        <label for="espalhar">Espalhar</label><br />
+        <input min="-100" max="100" type="range" name="tamanho" id="tamanho" />
         <br />
-        <input type="range" name="" id="" />
+        <label for="tamanho">Tamanho</label><br />
+        <input
+          min="-100"
+          max="100"
+          type="range"
+          name="espalhar"
+          id="espalhar"
+        />
+        <br />
+        <label for="opacidade">Opacidade está Bugada</label><br />
+        <input min="0" max="100" type="range" name="opacidade" id="opacidade" />
       </div>
 
       <!--- <h2>Contador de caracteres</h2>
@@ -77,7 +108,31 @@
       <span class="contador"></span>-->
     </div>
     <script>
-      let head = document.querySelector("head");
+      let textAreaShadow = document.querySelector("#bordas");
+      const inputShadow = document.querySelectorAll(".bordas input");
+
+      let horizontal = document.querySelector("#horizontal");
+      let vertical = document.querySelector("#vertical");
+      let borrar = document.querySelector("#tamanho");
+      let espalhar = document.querySelector("#espalhar");
+      let cor = document.querySelector("#box-color");
+      let opacidade = document.querySelector("#opacidade");
+      const container = document.querySelector(".container");
+
+      for (let i = 0; i < inputShadow.length; i++) {
+        inputShadow[i].addEventListener("input", function () {
+          let bodBorderShabow = `${horizontal.value}px ${vertical.value}px ${borrar.value}px ${espalhar.value}px ${cor.value}${opacidade.value}`;
+          let textAreaPrint = `
+      -webkit-box-shadow: ${horizontal.value}px ${vertical.value}px ${borrar.value}px ${espalhar.value}px ${cor.value}${opacidade.value};
+      -moz-box-shadow: ${horizontal.value}px ${vertical.value}px ${borrar.value}px ${espalhar.value}px ${cor.value}${opacidade.value};
+      box-shadow: ${horizontal.value}px ${vertical.value}px ${borrar.value}px ${espalhar.value}px ${cor.value}${opacidade.value};
+      `;
+
+          textAreaShadow.innerText = textAreaPrint;
+          container.style.boxShadow = bodBorderShabow;
+        });
+      }
+      // let head = document.querySelector("head");
       let body = document.querySelector("body");
       let input1 = document.querySelector(".cor1");
       let input2 = document.querySelector(".cor2");
@@ -86,27 +141,27 @@
       let input5 = document.querySelector(".valor2");
       let textarea = document.querySelector("textarea");
       let inputs = document.querySelectorAll(".gradiente input");
+
       for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("input", function () {
-          let a = input1.value;
-          let b = input2.value;
-          let c = input3.value;
-          let d = input4.value;
-          let e = input5.value;
-          head.innerHTML = `<style>body {background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);height: 96vh; background-size: cover;}</style>`;
-          textarea.innerText = `background: ${a};background: linear-gradient(${c}deg, ${a}, ${d}%, ${b} ${e}%);background: -moz-linear-gradient(${c}deg, ${a} ${d}%, ${b} ${e}%);background: -webkit-linear-gradient(${
-            c * 2
-          }deg, ${b} ${d}%, ${a} ${e}%);`;
+          let dom = `linear-gradient(${input3.value}deg, ${input1.value}, ${input4.value}%, ${input2.value} ${input5.value}%)`;
+          body.style.background = dom;
+
+          textarea.innerText = `background: ${
+            input1.value
+          };background: linear-gradient(${input3.value}deg, ${input1.value}, ${
+            input4.value
+          }%, ${input2.value} ${
+            input5.value
+          }%);background: -moz-linear-gradient(${input3.value}deg, ${
+            input1.value
+          } ${input4.value}%, ${input2.value} ${
+            input5.value
+          }%);background: -webkit-linear-gradient(${input3.value * 2}deg, ${
+            input2.value
+          } ${input4.value}%, ${input1.value} ${input5.value}%);`;
         });
       }
-
-      // let contador = document.body.querySelector("#contador");
-      // let spanContador = document.body.querySelector(".contador");
-
-      // contador.addEventListener("input", function () {
-      //   spanContador.innerHTML = `Numero de Caracteres ${contador.textLength}`;
-      // });
-      document.querySelector("#bordas");
     </script>
   </body>
 </html>
