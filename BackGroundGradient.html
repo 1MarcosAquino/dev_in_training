@@ -10,28 +10,37 @@
     </style>
   </head>
   <body>
-    <h2>background gradient</h2>
+    <div
+      class="container"
+      style="margin: 0 auto; width: 80%; background-color: aliceblue"
+    >
+      <h2>background gradient</h2>
 
-    <textarea cols="90" rows="10"></textarea>
-    <br />
-    <br />
-    <input class="cor1" type="color" />
-    <input class="cor2" type="color" />
-    <br />
-    <label>Valor deg</label>
-    <input class="deg" type="range" min="0" max="180" />
-    <br />
-    <label>Valor 1</label>
-    <input class="valor1" type="range" min="0" max="100" />
-    <br />
-    <label>Valor 2</label>
-    <input class="valor2" type="range" min="50" max="100" />
-    <h2>Contador de caracteres</h2>
-    <br />
-    <textarea id="contador" cols="30" rows="10"></textarea>
-    <br />
-    <span class="contador"></span>
-
+      <textarea
+        id="backGround"
+        cols="50"
+        rows="10"
+        style="resize: none"
+      ></textarea>
+      <br />
+      <br />
+      <input class="cor1" type="color" />
+      <input class="cor2" type="color" />
+      <br />
+      <label>Valor deg</label>
+      <input class="deg" type="range" min="0" max="180" />
+      <br />
+      <label>Valor 1</label>
+      <input class="valor1" type="range" min="0" max="100" />
+      <br />
+      <label>Valor 2</label>
+      <input class="valor2" type="range" min="50" max="100" />
+      <!--- <h2>Contador de caracteres</h2>
+      <br />
+      <textarea id="contador" cols="30" rows="10"></textarea>
+      <br />
+      <span class="contador"></span>-->
+    </div>
     <script>
       let head = document.querySelector("head");
       let body = document.querySelector("body");
