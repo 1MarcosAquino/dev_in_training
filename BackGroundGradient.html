@@ -7,34 +7,69 @@
       body {
         height: 100vh;
       }
+      .container {
+        box-shadow: 10px 10px 10px 10px red;
+      }
     </style>
   </head>
   <body>
     <div
       class="container"
-      style="margin: 0 auto; width: 80%; background-color: aliceblue"
+      style="
+        margin: 0 auto;
+        width: 80%;
+        background-color: aliceblue;
+        display: flex;
+      "
     >
-      <h2>background gradient</h2>
+      <div class="gradiente" style="margin: 10px auto">
+        <h2 style="text-align: center">Background Gradient</h2>
 
-      <textarea
-        id="backGround"
-        cols="50"
-        rows="10"
-        style="resize: none"
-      ></textarea>
-      <br />
-      <br />
-      <input class="cor1" type="color" />
-      <input class="cor2" type="color" />
-      <br />
-      <label>Valor deg</label>
-      <input class="deg" type="range" min="0" max="180" />
-      <br />
-      <label>Valor 1</label>
-      <input class="valor1" type="range" min="0" max="100" />
-      <br />
-      <label>Valor 2</label>
-      <input class="valor2" type="range" min="50" max="100" />
+        <textarea
+          id="backGround"
+          cols="50"
+          rows="10"
+          style="resize: none"
+        ></textarea>
+        <br />
+        <label for="gradient-type">Radial</label>
+        <input type="radio" name="gradient-type" id="radial" />
+
+        <label for="gradient-type">Linear</label>
+        <input type="radio" name="gradient-type" id="linear" />
+        <br />
+        <input class="cor1" type="color" />
+        <input class="cor2" type="color" />
+        <br />
+        <label>DEG</label><br />
+        <input class="deg" type="range" min="0" max="180" />
+        <br />
+        <label>Cor 1</label><br />
+        <input class="valor1" type="range" min="0" max="100" />
+        <br />
+        <label>Cor 2</label><br />
+        <input class="valor2" type="range" min="50" max="100" />
+      </div>
+      <div class="bordas" style="margin: 10px auto">
+        <h2 style="text-align: center">Box Shandow</h2>
+        <textarea
+          id="bordas"
+          cols="50"
+          rows="10"
+          style="resize: none"
+        ></textarea>
+        <br />
+        <input type="color" name="box-color" id="box-color" />
+        <br />
+        <input type="range" name="" id="" />
+        <br />
+        <input type="range" name="" id="" />
+        <br />
+        <input type="range" name="" id="" />
+        <br />
+        <input type="range" name="" id="" />
+      </div>
+
       <!--- <h2>Contador de caracteres</h2>
       <br />
       <textarea id="contador" cols="30" rows="10"></textarea>
@@ -50,7 +85,7 @@
       let input4 = document.querySelector(".valor1");
       let input5 = document.querySelector(".valor2");
       let textarea = document.querySelector("textarea");
-      let inputs = document.querySelectorAll("input");
+      let inputs = document.querySelectorAll(".gradiente input");
       for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("input", function () {
           let a = input1.value;
@@ -65,12 +100,13 @@
         });
       }
 
-      let contador = document.body.querySelector("#contador");
-      let spanContador = document.body.querySelector(".contador");
+      // let contador = document.body.querySelector("#contador");
+      // let spanContador = document.body.querySelector(".contador");
 
-      contador.addEventListener("input", function () {
-        spanContador.innerHTML = `Numero de Caracteres ${contador.textLength}`;
-      });
+      // contador.addEventListener("input", function () {
+      //   spanContador.innerHTML = `Numero de Caracteres ${contador.textLength}`;
+      // });
+      document.querySelector("#bordas");
     </script>
   </body>
 </html>
