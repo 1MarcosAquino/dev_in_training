@@ -10,11 +10,6 @@
         flex-wrap: wrap;
         align-items: center;
       }
-      .container {
-        box-shadow: 75px 75px 75px 75px #00000000;
-
-        /* box-shadow: 10px 10px 10px 10px red; */
-      }
     </style>
   </head>
   <body>
@@ -104,22 +99,9 @@
           id="espalhar"
         />
         <br />
-        <label for="opacidade" style="display: none">Opacidade</label><br />
-        <input
-          min="0"
-          max="100"
-          type="range"
-          name="opacidade"
-          id="opacidade"
-          style="display: none"
-        />
+        <label for="opacidade">Opacidade</label><br />
+        <input min="1" max="99" type="range" name="opacidade" id="opacidade" />
       </div>
-
-      <!--- <h2>Contador de caracteres</h2>
-      <br />
-      <textarea id="contador" cols="30" rows="10"></textarea>
-      <br />
-      <span class="contador"></span>-->
     </div>
     <script>
       let textAreaShadow = document.querySelector("#bordas");
