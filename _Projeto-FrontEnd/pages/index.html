@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <title>Projeto FrontEnd</title>
+  </head>
+  <body>
+    <header>
+      <div class="entrepriseLogo">
+        <img class="logo" src="./src/assets/images/logo2.png" alt="logo" />
+        <!-- <h1>Kenzie Empresas</h1> -->
+      </div>
+      <button class="btn_menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="buttons hidden">
+        <button class="header--button login">Login</button>
+        <button class="header--button cadastro">Cadastro</button>
+      </div>
+    </header>
+    <main>
+      <dialog open>
+        <h2>Cadastre-se</h2>
+        <form id="cadastrar">
+          <label for="name">Nome</label>
+          <input name="name" type="text" placeholder="Seu nome" />
+          <label for="email">E-mail</label>
+          <input name="email" type="text" placeholder="Seu e-mail" />
+          <label for="password">Senha</label>
+          <input name="password" type="password" placeholder="Sua senha" />
+          <select name="proficinal-level" id="proficinal-level">
+            <option>Selecionar</option>
+            <option value="level-1">Nivel 1</option>
+            <option value="level-2">Nivel 2</option>
+            <option value="level-3">Nivel 3</option>
+          </select>
+          <button>Cadastre-se</button>
+          <button>Retornar</button>
+        </form>
+      </dialog>
+    </main>
+    <script>
+      const button = document.querySelector(".btn_menu");
+      const barra = document.querySelector("i");
+
+      const ul = document.querySelector(".buttons");
+
+      button.addEventListener("click", () => {
+        barra.classList.toggle("fa-x");
+        ul.classList.toggle("hidden");
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/eb9ece5dd2.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

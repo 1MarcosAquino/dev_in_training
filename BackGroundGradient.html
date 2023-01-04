@@ -152,19 +152,7 @@
           let dom = `${tipo}-gradient(${input3.value}deg, ${input1.value}, ${input4.value}%, ${input2.value} ${input5.value}%)`;
           body.style.background = dom;
 
-          textarea.innerText = `background: ${
-            input1.value
-          };background: ${tipo}-gradient(${input3.value}deg, ${input1.value}, ${
-            input4.value
-          }%, ${input2.value} ${
-            input5.value
-          }%);background: -moz-${tipo}-gradient(${input3.value}deg, ${
-            input1.value
-          } ${input4.value}%, ${input2.value} ${
-            input5.value
-          }%);background: -webkit-${tipo}-gradient(${input3.value * 2}deg, ${
-            input2.value
-          } ${input4.value}%, ${input1.value} ${input5.value}%);`;
+          textarea.innerText = `background: ${input1.value};background: ${tipo}-gradient(${input3.value}deg, ${input1.value}, ${input4.value}%, ${input2.value} ${input5.value}%);background: -moz-${tipo}-gradient(${input3.value}deg, ${input1.value} ${input4.value}%, ${input2.value} ${input5.value}%);background: -webkit-${tipo}-gradient(${input3.value}deg, ${input2.value} ${input4.value}%, ${input1.value} ${input5.value}%);`;
         });
       }
     </script>

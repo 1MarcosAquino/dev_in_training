@@ -1,0 +1,65 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 40px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border-bottom: 2px solid var(--color-6);
+}
+.entrepriseLogo {
+    display: flex;
+    gap:15px;
+}
+.logo {
+    width: auto;
+    height: 60%;
+
+    align-self: center;
+}
+h1 {
+    font-size: medium;
+}
+.btn_menu{
+    background-color: transparent;
+    border: transparent;
+    display: block;
+}
+.btn_menu > i {
+    display: block;
+    width: auto;
+    height: 50%;
+}
+.hidden{
+    display: none;
+} 
+.header--button {
+    width: 85px;
+    height: 40px;
+    border-radius: 4px;
+}
+.login {
+    border: solid 1px var(--color-1);
+    color: var(--color-1);
+}
+.cadastro {
+    background-color: var(--color-1);
+    color: var(--color-2);
+    border: transparent;
+}
+
+@media(min-width: 798px) {
+    header{
+        justify-content: space-between;
+    }
+    .btn_menu{
+        display: none;
+    }
+    .hidden{
+        display: block;
+    } 
+}
