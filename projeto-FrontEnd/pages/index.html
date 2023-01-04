@@ -14,20 +14,23 @@
   </head>
   <body>
     <header>
-      <div class="entrepriseLogo">
-        <img class="logo" src="./src/assets/images/logo2.png" alt="logo" />
-        <!-- <h1>Kenzie Empresas</h1> -->
-      </div>
-      <button class="btn_menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <div class="buttons hidden">
-        <button class="header--button login">Login</button>
-        <button class="header--button cadastro">Cadastro</button>
+      <div class="container">
+        <div class="entrepriseLogo">
+          <img class="logo" src="./src/assets/images/logo2.png" alt="logo" />
+          <!-- <h1>Kenzie Empresas</h1> -->
+        </div>
+        <button class="btn_menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="buttons hidden">
+          <button class="header--button login">Login</button>
+          <button class="header--button cadastro">Cadastro</button>
+        </div>
       </div>
     </header>
     <main>
-      <dialog open>
+      <div class="container">
+        <dialog open>
         <h2>Cadastre-se</h2>
         <form id="cadastrar">
           <label for="name">Nome</label>
@@ -47,6 +50,7 @@
         </form>
       </dialog>
     </main>
+</div>
     <script>
       const button = document.querySelector(".btn_menu");
       const barra = document.querySelector("i");
