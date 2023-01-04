@@ -28,9 +28,10 @@
         </div>
       </div>
     </header>
-    <main>
+    <main hidden>
       <div class="container">
-        <dialog open>
+        </main>
+        <dialog>
         <h2>Cadastre-se</h2>
         <form id="cadastrar">
           <label for="name">Nome</label>
@@ -49,22 +50,24 @@
           <button>Retornar</button>
         </form>
       </dialog>
-    </main>
+    
 </div>
     <script>
       const button = document.querySelector(".btn_menu");
       const barra = document.querySelector("i");
 
-      const ul = document.querySelector(".buttons");
+      const btn = document.querySelector(".buttons");
 
       button.addEventListener("click", () => {
         barra.classList.toggle("fa-x");
-        ul.classList.toggle("hidden");
+        btn.classList.toggle("hidden");
       });
     </script>
     <script
       src="https://kit.fontawesome.com/eb9ece5dd2.js"
       crossorigin="anonymous"
+    ></script>
+    <script type = "module" src="./src/scripts/modal.js"
     ></script>
   </body>
 </html>

@@ -1,5 +1,8 @@
 @import url('./globalStyle.css');
 @import url('./header.css');
+@import url('./main.css');
+@import url('./modal.css');
+
 
 #cadastrar{
     display: flex;
