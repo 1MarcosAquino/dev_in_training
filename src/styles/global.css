@@ -1,0 +1,18 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+:root {
+    --primary-color: rgba(139, 161, 220, 0.741);
+    --secondary-color: rgb(139, 167, 240);
+    --tercenary-color: rgb(187, 201, 240);
+    --white-color: #3d3b3b;
+    --black-color: rgb(55, 36, 36);
+}

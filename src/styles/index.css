@@ -1,0 +1,50 @@
+@import url(global.css);
+
+header {
+    background-color: var(--primary-color);
+
+    -webkit-box-shadow: -12px 0px 50px 0px #00000050;
+    -moz-box-shadow: -12px 0px 50px 0px #00000050;
+    box-shadow: -12px 0px 50px 0px #00000050;
+}
+
+ul.containerMenu {
+    display: flex;
+
+    li.category {
+        margin: 2px;
+        padding: 15px;
+        text-transform: uppercase;
+
+        p {
+            color: var(--black-color);
+        }
+    }
+
+    li.category:hover {
+        background-color: var(--tercenary-color);
+    }
+
+    li.category:hover ul {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--tercenary-color);
+    }
+}
+
+ul.containerCard {
+    display: none;
+}
+
+li.card {
+    padding: 0.8rem 1rem;
+    a {
+        color: var(--white-color);
+        text-decoration: none;
+    }
+}
+
+li.card:hover {
+    background-color: var(--secondary-color);
+}
