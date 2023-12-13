@@ -36,29 +36,3 @@ const createMenu = ({ category, list }) => {
 };
 
 database.forEach((obj) => containerMenu.append(createMenu(obj)));
-
-/*
-
-// RASPAGEM
-const titulos = document.querySelectorAll('li.category');
-
-const elements = (element) => {
-    const category = element.innerText;
-    const lists = element.querySelectorAll('a');
-
-    const list = [...lists].map((element) => {
-        return {
-            link: element.href,
-            text: element.innerText,
-        };
-    });
-
-    return { category, list };
-};
-
-const mDatabase = [];
-
-titulos.forEach((titulo) => mDatabase.push(elements(titulo)));
-
-console.log(mDatabase);
-*/
