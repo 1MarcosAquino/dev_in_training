@@ -1,9 +1,9 @@
 # MEU PRIMEIRO PROJETO
 
-A ideia inicial era treinar HTML5, CSS3. O JAVASCRIPT veio pouco depois.
+Inicialmente, meu objetivo era aprimorar minhas habilidades em HTML5 e CSS3, e posteriormente, integrei o JavaScript ao meu aprendizado.
 
-Criei um menu que muda quando colocar o mouse em cima de cada item.
+Desenvolvi um menu interativo que altera sua aparência quando o mouse é posicionado sobre cada item.
 
-Esse é o meu primeiro projeto individual. Hoje dia 12.12.2023, vim mudar ele um pouco.
+Este projeto possibilita a alteração das cores de fundo de uma página web através de inputs. Além disso, é possível adicionar uma sombra ao elemento, proporcionando uma experiência visual mais dinâmica.
 
 [Ver Projeto](https://1marcosaquino.github.io/dev_in_training/)
