@@ -26,11 +26,11 @@ export const database = [
         ],
     },
     {
-        category: 'KENZIE',
+        category: 'CHAT GPT',
         list: [
             {
-                link: 'https://canvas.kenzie.com.br/',
-                text: 'Canvas Kenzie',
+                link: 'https://chat.openai.com/',
+                text: 'chat Gpt',
             },
         ],
     },
@@ -140,6 +140,10 @@ export const database = [
             {
                 link: 'https://mail.google.com/',
                 text: 'Gmail',
+            },
+            {
+                link: 'https://drive.google.com/drive/',
+                text: 'Google Drive',
             },
             {
                 link: 'https://calendar.google.com/',

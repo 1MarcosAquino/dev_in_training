@@ -10,9 +10,8 @@ li {
 }
 
 :root {
-    --primary-color: rgba(139, 161, 220, 0.741);
-    --secondary-color: rgb(139, 167, 240);
-    --tercenary-color: rgb(187, 201, 240);
-    --white-color: #3d3b3b;
-    --black-color: rgb(55, 36, 36);
+    --primary-color: #007ffb;
+    --secondary-color: #0059b0;
+    --white-color: rgb(255, 253, 253);
+    --black-color: #3b3b3b;
 }

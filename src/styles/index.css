@@ -1,50 +1,183 @@
 @import url(global.css);
 
+body {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    gap: 10px;
+}
+
 header {
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+
+    font-weight: 500;
     background-color: var(--primary-color);
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    -webkit-box-shadow: -12px 0px 50px 0px #00000050;
+    -moz-box-shadow: -12px 0px 50px 0px #00000050;
+    box-shadow: -12px 0px 50px 0px #00000050;
+
+    ul.containerMenu {
+        display: flex;
+        li.category {
+            margin: 2px;
+            padding: 15px;
+            text-transform: uppercase;
+            color: var(--white-color);
+        }
+
+        li.category:hover {
+            background-color: var(--secondary-color);
+        }
+
+        li.category:hover ul {
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--secondary-color);
+        }
+    }
+
+    ul.containerCard {
+        display: none;
+    }
+
+    li.card {
+        a {
+            width: 100%;
+            display: block;
+            padding: 0.8rem 1rem;
+            color: var(--white-color);
+            text-decoration: none;
+        }
+    }
+
+    li.card:hover {
+        background-color: var(--primary-color);
+    }
+}
+
+.container {
+    margin: 0 auto 100px auto;
+    min-width: 50%;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    border-radius: 8px;
 
     -webkit-box-shadow: -12px 0px 50px 0px #00000050;
     -moz-box-shadow: -12px 0px 50px 0px #00000050;
     box-shadow: -12px 0px 50px 0px #00000050;
 }
 
-ul.containerMenu {
+aside {
+    border: 1px solid #00000050;
+    border-radius: 4px;
+    padding: 10px 0;
+
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    width: 45%;
 
-    li.category {
-        margin: 2px;
-        padding: 15px;
-        text-transform: uppercase;
-
-        p {
-            color: var(--black-color);
-        }
+    * {
+        width: 90%;
     }
 
-    li.category:hover {
-        background-color: var(--tercenary-color);
+    h2 {
+        margin-bottom: 15px;
     }
 
-    li.category:hover ul {
-        position: absolute;
+    div {
         display: flex;
-        flex-direction: column;
-        background-color: var(--tercenary-color);
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .sombra {
+        column-gap: 10px;
+    }
+
+    .cores {
+        gap: 5px;
+        margin-bottom: 15px;
     }
 }
 
-ul.containerCard {
-    display: none;
+textarea {
+    resize: none;
+    border-radius: 4px;
+    width: 90%;
+    height: 5em;
 }
 
-li.card {
-    padding: 0.8rem 1rem;
-    a {
-        color: var(--white-color);
-        text-decoration: none;
-    }
+input[type='color'] {
+    width: 50px;
+    height: 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
 }
 
-li.card:hover {
-    background-color: var(--secondary-color);
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 4px;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+    height: 20px;
+    width: 50px;
+}
+
+input[type='color']::-moz-color-swatch {
+    height: 20px;
+    width: 50px;
+    border-radius: 4px;
+}
+
+input[type='range'] {
+    width: 100px;
+    height: 8px;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #8a8a8a, #b3b3b3);
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+input[type='range']:hover {
+    opacity: 1;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
 }
